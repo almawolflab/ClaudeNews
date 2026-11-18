@@ -2,6 +2,19 @@
   "actualizado": "2026-11-18",
   "items": [
     {
+      "id": "2026-11-17-canal-versiones-desktop",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Claude Desktop permite elegir un canal de versiones",
+      "resumen": "Se puede elegir el canal de versiones de Claude Desktop: Stable (por defecto) recibe versiones con menos frecuencia y tras más pruebas; Latest recibe una nueva versión aproximadamente una vez al día.",
+      "fecha": "2026-11-17",
+      "fuente": { "url": "https://support.claude.com/en/articles/12138966-release-notes", "nombre": "Claude · Release notes", "oficial": true },
+      "tags": ["desktop", "actualizaciones"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, afecta a la app de escritorio que usa todo el grupo." }
+    },
+    {
       "id": "2026-11-11-proyectos-claude",
       "tipo": "video",
       "empresas": ["transversal"],
