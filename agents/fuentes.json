@@ -8,7 +8,7 @@
     { "id": "claude-articles", "nombre": "Claude · Artículos", "url": "https://claude.com/resources/articles", "oficial": true, "audiencias": ["transversal", "sagitaz", "woztell", "finanzas"] },
     { "id": "claude-apps-release-notes", "nombre": "Claude · Release notes (apps, Teams, Cowork)", "url": "https://support.claude.com/en/articles/12138966-release-notes", "oficial": true, "audiencias": ["transversal", "finanzas"] },
     { "id": "claude-platform-release-notes", "nombre": "Claude Platform · Release notes (API)", "url": "https://platform.claude.com/docs/en/release-notes/overview", "oficial": true, "audiencias": ["sagitaz", "woztell"] },
-    { "id": "claude-code-changelog", "nombre": "Claude Code · Changelog", "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "oficial": true, "audiencias": ["sagitaz"] },
+    { "id": "claude-code-changelog", "nombre": "Claude Code · Changelog", "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md", "oficial": true, "audiencias": ["sagitaz"] },
     { "id": "anthropics-github", "nombre": "GitHub · anthropics", "url": "https://github.com/anthropics", "oficial": true, "audiencias": ["sagitaz"] },
     { "id": "anthropics-skills", "nombre": "GitHub · anthropics/skills", "url": "https://github.com/anthropics/skills", "oficial": true, "audiencias": ["sagitaz", "finanzas"] },
     { "id": "claude-plugins-official", "nombre": "GitHub · anthropics/claude-plugins-official", "url": "https://github.com/anthropics/claude-plugins-official", "oficial": true, "audiencias": ["sagitaz"] },

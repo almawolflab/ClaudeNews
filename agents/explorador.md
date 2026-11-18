@@ -38,8 +38,12 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
 ## 3 · Búsqueda
 
 - Ventana: novedades publicadas en las **últimas `ventanaHoras` (72 h)**.
-- Recorre **todas** las `fuentes` de `agents/fuentes.json` (las 15, no solo las primeras) y lanza **todas** las `busquedas` de **cada** audiencia con la búsqueda web. Puedes repartirlas en subagentes en paralelo para ir más rápido. Que una audiencia no tenga resultados es normal; saltarte sus búsquedas no.
-- Si una fuente no carga, anótala y sigue con las demás.
+- **Fuentes:** recorre **todas** las `fuentes` de `agents/fuentes.json`, no solo las primeras. Si una no carga (p. ej. dominio bloqueado en la red de la nube), anótala y sigue con las demás.
+- **Búsquedas (obligatorio, en paralelo):** lanza **4 subagentes a la vez**, uno por audiencia (`sagitaz`, `woztell`, `finanzas`, `transversal`). A cada uno le pasas la ventana de fechas, la fila de su audiencia de la tabla del paso 1 y **todas** sus `busquedas`. Cada subagente:
+  - ejecuta **cada una** de sus búsquedas, sin saltarse ninguna (puede añadir el mes y el año a la consulta);
+  - abre los resultados que parezcan de la ventana y devuelve solo candidatos con **URL abierta, fecha de publicación y por qué encaja**, o "sin novedades";
+  - devuelve también la lista de búsquedas ejecutadas.
+- Que una audiencia no tenga resultados es normal; saltarte sus búsquedas no. En el informe pon "búsquedas: N de N".
 - **Abre cada página** candidata. Solo cuenta lo que hayas leído en la propia página: fecha de publicación, qué es, a quién afecta.
 - Para videos de YouTube: el `youtubeId` sale de la URL que has abierto (`watch?v=XXXXXXXXXXX`), nunca de memoria.
 - Para repos: `repoUrl` = `https://github.com/owner/repo` que hayas abierto; `licencia` = la que muestre el repo (SPDX) o `null`.
