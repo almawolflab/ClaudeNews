@@ -41,8 +41,11 @@ ClaudeNews/
 ├── agents/
 │   ├── explorador.md          # Prompt del explorador diario
 │   ├── juez.md                # Prompt del juez (subagente independiente)
-│   └── fuentes.json           # Fuentes, búsquedas por audiencia y límites
-├── scripts/validate.js        # Validación (schema, duplicados, URLs, destacada, youtubeId)
+│   ├── fuentes.json           # Fuentes, catálogos, búsquedas por audiencia y límites
+│   └── estado/catalogo.json   # Última lista vista de cursos/tutoriales de Claude Academy
+├── scripts/
+│   ├── validate.js            # Validación (schema, duplicados, URLs, destacada, youtubeId)
+│   └── catalogos.js           # Novedades del Marketplace (por fecha) y de Academy (por diferencia)
 └── .github/workflows/validate-pr.yml
 ```
 

@@ -51,6 +51,9 @@ Explorador diario → juez → PR que añade ítems a `data/items.json` → `val
 
 - `agents/explorador.md` — prompt completo del explorador. La rutina en la nube solo le dice "lee y sigue este archivo": **los cambios de comportamiento se hacen aquí**, no en la rutina.
 - `agents/juez.md` — prompt del juez (subagente independiente, criterios numerados, salida JSON).
-- `agents/fuentes.json` — fuentes (URLs comprobadas), búsquedas por audiencia, `ventanaHoras` y `maxItemsDia`.
+- `agents/fuentes.json` — fuentes (URLs comprobadas), búsquedas por audiencia, `ventanaHoras` y `maxItemsDia`. Fuente principal: `claude.com/resources/product-updates`. Además, `catalogos`:
+  - **Claude Marketplace:** `node scripts/catalogos.js marketplace --desde AAAA-MM-DD` (usa el `addedAt` de cada conector).
+  - **Claude Academy:** `node scripts/catalogos.js academy [--guardar]` (sin fechas: compara con `agents/estado/catalogo.json`).
+- Formación (cursos, tutoriales, webinars) = `tipo: "docs"`, `formato: "enlace"`, tag `formacion`.
 - PRs del explorador: etiqueta `explorador`. Cerrar sin merge = rechazado para siempre.
 - Rutina: lunes a viernes, 06:00 UTC. Se gestiona en https://claude.ai/code/routines.
