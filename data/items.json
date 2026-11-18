@@ -8,20 +8,25 @@
       "titulo": "Webinar: Claude Rearview, revisión de novedades de noviembre 2026",
       "resumen": "Sesión en directo el 19 de noviembre de 2026, de 13:00 a 14:00 (hora del Pacífico, PT). Repasa lo lanzado recientemente en las apps de Claude, los controles de administración y la plataforma, indica qué está listo para activar y sus ajustes de administración, e incluye una demo y unos 15 minutos de preguntas. Requiere registro.",
       "fecha": "2026-11-19",
-      "fuente": {
-        "url": "https://claude.com/resources/webinars/claude-rearview-roadmap-review-november-2026",
-        "nombre": "Claude · Webinars",
-        "oficial": true
-      },
+      "fuente": { "url": "https://claude.com/resources/webinars/claude-rearview-roadmap-review-november-2026", "nombre": "Claude · Webinars", "oficial": true },
       "tags": ["formacion", "webinar", "novedades"],
       "featured": false,
       "estado": "aprobado",
       "formato": "enlace",
-      "validacion": {
-        "juez": "juez-llm-v1",
-        "fecha": "2026-11-18",
-        "notas": "Por qué encaja: transversal, repaso mensual de novedades y ajustes de administración."
-      }
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, repaso mensual de novedades y ajustes de administración." }
+    },
+    {
+      "id": "2026-11-17-canal-versiones-desktop",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Claude Desktop permite elegir un canal de versiones",
+      "resumen": "Se puede elegir el canal de versiones de Claude Desktop: Stable (por defecto) recibe versiones con menos frecuencia y tras más pruebas; Latest recibe una nueva versión aproximadamente una vez al día.",
+      "fecha": "2026-11-17",
+      "fuente": { "url": "https://support.claude.com/en/articles/12138966-release-notes", "nombre": "Claude · Release notes", "oficial": true },
+      "tags": ["desktop", "actualizaciones"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, afecta a la app de escritorio que usa todo el grupo." }
     },
     {
       "id": "2026-11-12-claude-meetings",
@@ -30,62 +35,11 @@
       "titulo": "Claude Meetings: Claude se une a tus videollamadas (beta)",
       "resumen": "Claude Meetings está en beta y se despliega en los planes Team y Enterprise. Por ahora solo funciona con Google Meet. Claude redacta las notas y los puntos de acción, y cada reunión tiene su página en claude.ai con notas, transcripción y los materiales creados. En Team, invitar a Claude a las reuniones está activado por defecto y un administrador puede desactivarlo.",
       "fecha": "2026-11-12",
-      "fuente": {
-        "url": "https://claude.com/resources/articles/claude-meetings",
-        "nombre": "Claude · Product updates",
-        "oficial": true
-      },
+      "fuente": { "url": "https://claude.com/resources/articles/claude-meetings", "nombre": "Claude · Product updates", "oficial": true },
       "tags": ["meetings", "teams", "beta"],
       "featured": false,
       "estado": "aprobado",
-      "validacion": {
-        "juez": "juez-llm-v1",
-        "fecha": "2026-11-18",
-        "notas": "Por qué encaja: transversal, función exclusiva de los planes Team y Enterprise."
-      }
-    },
-    {
-      "id": "2026-11-11-proyectos-claude",
-      "tipo": "video",
-      "empresas": ["transversal"],
-      "titulo": "Novedades para el uso de proyectos en Claude",
-      "resumen": "Qué cambia en Projects y cómo aprovecharlo en equipo.",
-      "fecha": "2026-11-11",
-      "fuente": {
-        "url": "https://www.youtube.com/watch?v=nZaOSQffA8M",
-        "nombre": "YouTube",
-        "oficial": false
-      },
-      "tags": ["projects", "teams"],
-      "featured": true,
-      "estado": "aprobado",
-      "youtubeId": "nZaOSQffA8M",
-      "validacion": {
-        "juez": "humano",
-        "fecha": "2026-11-11",
-        "notas": "Ítem semilla de la issue 001."
-      }
-    },
-    {
-      "id": "2026-11-11-plugin-ders-dercas",
-      "tipo": "novedad",
-      "empresas": ["sagitaz"],
-      "titulo": "Nuevo plugin DERS/DERCAS para consultores",
-      "resumen": "Sagitaz tiene un nuevo plugin DERS/DERCAS para los consultores.",
-      "fecha": "2026-11-11",
-      "fuente": {
-        "url": null,
-        "nombre": "Sagitaz",
-        "oficial": false
-      },
-      "tags": ["plugin", "ders", "dercas"],
-      "featured": false,
-      "estado": "aprobado",
-      "validacion": {
-        "juez": "humano",
-        "fecha": "2026-11-11",
-        "notas": "Ítem semilla de la issue 001. Falta URL."
-      }
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, función exclusiva de los planes Team y Enterprise." }
     },
     {
       "id": "2026-11-11-ofimatica-finanzas",
@@ -94,20 +48,39 @@
       "titulo": "Funcionalidades de ofimática de Claude útiles para finanzas",
       "resumen": "Video sobre las funciones de ofimática de Claude que sirven al área de Finanzas.",
       "fecha": "2026-11-11",
-      "fuente": {
-        "url": null,
-        "nombre": "YouTube",
-        "oficial": false
-      },
+      "fuente": { "url": null, "nombre": "YouTube", "oficial": false },
       "tags": ["ofimatica"],
       "featured": false,
       "estado": "aprobado",
       "youtubeId": null,
-      "validacion": {
-        "juez": "humano",
-        "fecha": "2026-11-11",
-        "notas": "Ítem semilla de la issue 001. Falta el video (youtubeId y URL)."
-      }
+      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001. Falta el video (youtubeId y URL)." }
+    },
+    {
+      "id": "2026-11-11-plugin-ders-dercas",
+      "tipo": "novedad",
+      "empresas": ["sagitaz"],
+      "titulo": "Nuevo plugin DERS/DERCAS para consultores",
+      "resumen": "Sagitaz tiene un nuevo plugin DERS/DERCAS para los consultores.",
+      "fecha": "2026-11-11",
+      "fuente": { "url": null, "nombre": "Sagitaz", "oficial": false },
+      "tags": ["plugin", "ders", "dercas"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001. Falta URL." }
+    },
+    {
+      "id": "2026-11-11-proyectos-claude",
+      "tipo": "video",
+      "empresas": ["transversal"],
+      "titulo": "Novedades para el uso de proyectos en Claude",
+      "resumen": "Qué cambia en Projects y cómo aprovecharlo en equipo.",
+      "fecha": "2026-11-11",
+      "fuente": { "url": "https://www.youtube.com/watch?v=nZaOSQffA8M", "nombre": "YouTube", "oficial": false },
+      "tags": ["projects", "teams"],
+      "featured": true,
+      "estado": "aprobado",
+      "youtubeId": "nZaOSQffA8M",
+      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001." }
     },
     {
       "id": "2026-11-11-repos-skills",
@@ -116,42 +89,13 @@
       "titulo": "Repositorios para crear nuevas skills útiles",
       "resumen": "Selección de repositorios de referencia para crear skills de Claude.",
       "fecha": "2026-11-11",
-      "fuente": {
-        "url": null,
-        "nombre": "GitHub",
-        "oficial": false
-      },
+      "fuente": { "url": null, "nombre": "GitHub", "oficial": false },
       "tags": ["skills"],
       "featured": false,
       "estado": "aprobado",
       "repoUrl": null,
       "licencia": null,
-      "validacion": {
-        "juez": "humano",
-        "fecha": "2026-11-11",
-        "notas": "Ítem semilla de la issue 001. Falta la URL del repositorio."
-      }
-    },
-    {
-      "id": "2026-11-10-sheets-whiteboards-data",
-      "tipo": "novedad",
-      "empresas": ["transversal", "finanzas", "sagitaz"],
-      "titulo": "Claude Sheets, Whiteboards y Data: hojas de cálculo, pizarras y datos dentro de Claude",
-      "resumen": "Claude Sheets y Whiteboards salen en beta y Claude Data pasa a disponibilidad general. Sheets crea y edita hojas de cálculo, con funcionalidad básica por ahora; para Excel completo se exporta a .xlsx o CSV. Las pizarras pueden llevarse a otras herramientas, como Vani by Zoho. Están en los planes de pago y activadas por defecto en Team.",
-      "fecha": "2026-11-10",
-      "fuente": {
-        "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
-        "nombre": "Claude · Product updates",
-        "oficial": true
-      },
-      "tags": ["sheets", "whiteboards", "data", "ofimatica"],
-      "featured": false,
-      "estado": "aprobado",
-      "validacion": {
-        "juez": "juez-llm-v1",
-        "fecha": "2026-11-18",
-        "notas": "Por qué encaja: transversal, activado por defecto en Team. Finanzas, hojas de cálculo y ofimática. Sagitaz, pizarras exportables a Vani by Zoho."
-      }
+      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001. Falta la URL del repositorio." }
     },
     {
       "id": "2026-11-10-conectores-interactivos",
@@ -160,19 +104,24 @@
       "titulo": "Conectores interactivos: abrir tus apps en Claude y trabajar en ellas",
       "resumen": "Las apps de socios, como Asana, Canva, monday.com o Smartsheet, se pueden abrir junto a la conversación o a pantalla completa, y Claude hace cambios en ellas mientras el usuario los aprueba. El artículo cita HubSpot entre los ejemplos (priorizar y actuar sobre tareas del pipeline). Se despliega en web y en la app de escritorio, en todos los planes.",
       "fecha": "2026-11-10",
-      "fuente": {
-        "url": "https://claude.com/resources/articles/interactive-connectors-full-tool",
-        "nombre": "Claude · Product updates",
-        "oficial": true
-      },
+      "fuente": { "url": "https://claude.com/resources/articles/interactive-connectors-full-tool", "nombre": "Claude · Product updates", "oficial": true },
       "tags": ["conectores", "hubspot", "mcp-apps"],
       "featured": false,
       "estado": "aprobado",
-      "validacion": {
-        "juez": "juez-llm-v1",
-        "fecha": "2026-11-18",
-        "notas": "Por qué encaja: transversal, disponible en todos los planes y en escritorio. Woztell, el artículo cita HubSpot como ejemplo."
-      }
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, disponible en todos los planes y en escritorio. Woztell, el artículo cita HubSpot como ejemplo." }
+    },
+    {
+      "id": "2026-11-10-sheets-whiteboards-data",
+      "tipo": "novedad",
+      "empresas": ["transversal", "finanzas", "sagitaz"],
+      "titulo": "Claude Sheets, Whiteboards y Data: hojas de cálculo, pizarras y datos dentro de Claude",
+      "resumen": "Claude Sheets y Whiteboards salen en beta y Claude Data pasa a disponibilidad general. Sheets crea y edita hojas de cálculo, con funcionalidad básica por ahora; para Excel completo se exporta a .xlsx o CSV. Las pizarras pueden llevarse a otras herramientas, como Vani by Zoho. Están en los planes de pago y activadas por defecto en Team.",
+      "fecha": "2026-11-10",
+      "fuente": { "url": "https://claude.com/resources/articles/sheets-whiteboards-data", "nombre": "Claude · Product updates", "oficial": true },
+      "tags": ["sheets", "whiteboards", "data", "ofimatica"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, activado por defecto en Team. Finanzas, hojas de cálculo y ofimática. Sagitaz, pizarras exportables a Vani by Zoho." }
     },
     {
       "id": "2026-11-09-claude-fable-5-2",
@@ -181,19 +130,11 @@
       "titulo": "Claude Fable 5.2 y Mythos 5.2, nuevos modelos de Anthropic",
       "resumen": "Anthropic presenta Claude Fable 5.2, disponible en todas las plataformas, y Mythos 5.2, para organizaciones verificadas. Para la mayoría de tareas de programación y conocimiento recomienda empezar con Opus 5.5. El precio estándar de Fable 5.2 es de 8 $ por millón de tokens de entrada y 40 $ de salida. Los planes de pago elegibles reciben uso extra de Fable por tiempo limitado.",
       "fecha": "2026-11-09",
-      "fuente": {
-        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-        "nombre": "Anthropic",
-        "oficial": true
-      },
+      "fuente": { "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "nombre": "Anthropic", "oficial": true },
       "tags": ["modelos", "fable", "claude-code"],
       "featured": false,
       "estado": "aprobado",
-      "validacion": {
-        "juez": "juez-llm-v1",
-        "fecha": "2026-11-18",
-        "notas": "Por qué encaja: transversal, el modelo nuevo está disponible en los planes de pago, con uso extra por tiempo limitado."
-      }
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, el modelo nuevo está disponible en los planes de pago, con uso extra por tiempo limitado." }
     }
   ]
 }
