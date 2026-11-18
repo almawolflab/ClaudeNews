@@ -32,12 +32,14 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
 2. **Conjunto de exclusión** (no proponer nada que ya esté aquí, por `id` o por URL):
    - todos los ítems de `data/items.json` (`id`, `fuente.url`, `repoUrl`, `youtubeId`);
    - los PR con la etiqueta `explorador`, **abiertos o cerrados**: `gh pr list --label explorador --state all --limit 50 --json number,state,mergedAt,headRefName`, y para cada uno `gh pr diff <n>` para sacar sus URLs e ids. Un PR **cerrado sin merge** = rechazado por Gabriel: sus ítems no se vuelven a proponer **nunca**.
+   - Si `gh pr list` falla (p. ej. por GraphQL), usa la API REST: `gh api 'repos/almawolflab/ClaudeNews/pulls?state=all&per_page=50'` y `gh api repos/almawolflab/ClaudeNews/pulls/<n>/files`.
    - Si `gh` no está disponible, usa `git fetch origin 'refs/heads/explorador/*:refs/remotes/origin/explorador/*'` y revisa esas ramas; anota en el informe final que no pudiste ver los PR cerrados.
 
 ## 3 · Búsqueda
 
 - Ventana: novedades publicadas en las **últimas `ventanaHoras` (72 h)**.
-- Recorre las `fuentes` de `agents/fuentes.json` y lanza las `busquedas` por audiencia con la búsqueda web.
+- Recorre **todas** las `fuentes` de `agents/fuentes.json` (las 15, no solo las primeras) y lanza **todas** las `busquedas` de **cada** audiencia con la búsqueda web. Puedes repartirlas en subagentes en paralelo para ir más rápido. Que una audiencia no tenga resultados es normal; saltarte sus búsquedas no.
+- Si una fuente no carga, anótala y sigue con las demás.
 - **Abre cada página** candidata. Solo cuenta lo que hayas leído en la propia página: fecha de publicación, qué es, a quién afecta.
 - Para videos de YouTube: el `youtubeId` sale de la URL que has abierto (`watch?v=XXXXXXXXXXX`), nunca de memoria.
 - Para repos: `repoUrl` = `https://github.com/owner/repo` que hayas abierto; `licencia` = la que muestre el repo (SPDX) o `null`.
@@ -87,7 +89,7 @@ Para cada ítem aprobado, comprueba que su `fecha` cae en alguna edición de `da
 1. Si no queda **ningún** ítem aprobado: no crees rama ni PR. Termina con el informe (paso 9).
 2. Crea la rama `explorador/<hoy>` (si existe, `explorador/<hoy>-2`).
 3. Añade los ítems a `data/items.json` → `items` (orden por `fecha` descendente) y pon `actualizado` = hoy. **No toques** HTML, CSS, JS, schemas ni otros archivos (salvo `data/editions.json` si el paso 7 lo pide).
-4. Ejecuta `node scripts/validate.js`. Si falla una URL o el schema, corrige o **quita** ese ítem y repite hasta 0 errores.
+4. Ejecuta `node scripts/validate.js --offline` (schema, duplicados, destacada, `youtubeId`). Si da errores, corrige o **quita** el ítem que los cause y repite hasta **0 errores**; no abras el PR con errores. Las URLs no se comprueban aquí porque el entorno de la nube bloquea algunos dominios (p. ej. YouTube): ya las abriste tú en el paso 3 y la Action del PR las vuelve a comprobar desde GitHub.
 5. Commit: `contenido: N novedades (<hoy>)` con un cuerpo que liste los ids.
 6. Push y PR con `gh pr create --label explorador --title "ClaudeNews: N novedades (<hoy>)" --body-file <archivo>`. Si la etiqueta no existe, créala: `gh label create explorador --color C13B2F --description "PR del agente explorador"`.
 
@@ -111,7 +113,7 @@ Descripción del PR (en Markdown):
 
 ## 9 · Informe final
 
-Termina con un resumen corto: fecha, fuentes revisadas, candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
+Termina con un resumen corto: fecha, **cobertura** (cada fuente y cada búsqueda por audiencia con su resultado: "sin novedades en la ventana", "N candidatos" o "no cargó"), candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
 
 ## Reglas que no se rompen
 
