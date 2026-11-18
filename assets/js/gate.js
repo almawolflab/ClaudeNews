@@ -3,7 +3,7 @@
 // pueden descargar sin pasar por aquí. Nunca escribir la contraseña en texto plano.
 import { $ } from './dom.js';
 
-const PASSWORD_SHA256 = ''; // SHA-256 (hex) de la contraseña. Ver CLAUDE.md → «Gate».
+const PASSWORD_SHA256 = '79a66539cada936bed958686880dfd03121c1390be8f4878e98d507d6ae4be89'; // SHA-256 (hex). Ver CLAUDE.md → «Gate».
 const STORAGE_KEY = 'aw_claudenews_auth';
 
 async function sha256Hex(text) {
