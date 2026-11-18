@@ -12,6 +12,9 @@
  *   - ids duplicados entre items.json y drafts/
  *   - que items.json solo tenga ítems "aprobado"
  *   - que cada ítem aprobado caiga en alguna edición
+ *   - como mucho un "featured": true por edición
+ *   - que el youtubeId de un video coincida con su fuente.url
+ *   - aviso si la novedad tenía más de 7 días cuando se validó
  *   - que las URLs respondan (status < 400)
  *
  * Sale con código 1 si hay errores. Los avisos (URLs pendientes, etc.) no fallan.
@@ -153,9 +156,34 @@ if (editions && editionsSchema) {
 
 /* ── items.json + drafts ────────────────────────────────────────────────── */
 const seen = new Map(); // id → archivo
+const DAY = 86400000;
+const MAX_AGE_DAYS = 7;
+
+/** youtubeId a partir de watch?v=, youtu.be/, /embed/ o /shorts/. */
+function youtubeIdFromUrl(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname.endsWith('youtu.be')) return u.pathname.slice(1, 12);
+    if (u.searchParams.get('v')) return u.searchParams.get('v');
+    const m = u.pathname.match(/\/(?:embed|shorts|live)\/([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
 function checkItem(item, where, { network = true } = {}) {
   if (!itemSchema) return;
   report(where, validate(itemSchema, item));
+  if (item?.tipo === 'video' && item.youtubeId && item.fuente?.url) {
+    const fromUrl = youtubeIdFromUrl(item.fuente.url);
+    if (fromUrl && fromUrl !== item.youtubeId)
+      errors.push(`${where} → youtubeId "${item.youtubeId}" no coincide con fuente.url (${fromUrl})`);
+  }
+  if (item?.fecha && item.validacion?.fecha && FORMATS.date(item.fecha) && FORMATS.date(item.validacion.fecha)) {
+    const age = (Date.parse(item.validacion.fecha) - Date.parse(item.fecha)) / DAY;
+    if (age > MAX_AGE_DAYS) warnings.push(`${where} (${item.id}): la novedad tenía ${Math.round(age)} días al validarse (> ${MAX_AGE_DAYS})`);
+  }
   if (item && item.id) {
     if (seen.has(item.id)) errors.push(`${where} → id duplicado "${item.id}" (ya en ${seen.get(item.id)})`);
     else seen.set(item.id, where);
@@ -187,6 +215,13 @@ if (itemsFile) {
       if (item?.fecha && eds.length && !eds.some((e) => item.fecha >= e.desde && (!e.hasta || item.fecha <= e.hasta)))
         warnings.push(`${w} (${item.id}): la fecha ${item.fecha} no cae en ninguna edición; no se mostrará`);
     });
+    for (const e of eds) {
+      const featured = itemsFile.items.filter(
+        (it) => it?.featured && it.fecha >= e.desde && (!e.hasta || it.fecha <= e.hasta),
+      );
+      if (featured.length > 1)
+        errors.push(`${where} → la edición "${e.id}" tiene ${featured.length} destacados (máx. 1): ${featured.map((it) => it.id).join(', ')}`);
+    }
   }
 }
 
