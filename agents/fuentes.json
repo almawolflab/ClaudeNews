@@ -3,26 +3,243 @@
   "ventanaHoras": 72,
   "maxItemsDia": 5,
   "fuentes": [
-    { "id": "anthropic-news", "nombre": "Anthropic · Noticias", "url": "https://www.anthropic.com/news", "oficial": true, "audiencias": ["transversal", "sagitaz", "woztell", "finanzas"] },
-    { "id": "anthropic-engineering", "nombre": "Anthropic · Engineering", "url": "https://www.anthropic.com/engineering", "oficial": true, "audiencias": ["transversal", "sagitaz"] },
-    { "id": "claude-articles", "nombre": "Claude · Artículos", "url": "https://claude.com/resources/articles", "oficial": true, "audiencias": ["transversal", "sagitaz", "woztell", "finanzas"] },
-    { "id": "claude-apps-release-notes", "nombre": "Claude · Release notes (apps, Teams, Cowork)", "url": "https://support.claude.com/en/articles/12138966-release-notes", "oficial": true, "audiencias": ["transversal", "finanzas"] },
-    { "id": "claude-platform-release-notes", "nombre": "Claude Platform · Release notes (API)", "url": "https://platform.claude.com/docs/en/release-notes/overview", "oficial": true, "audiencias": ["sagitaz", "woztell"] },
-    { "id": "claude-code-changelog", "nombre": "Claude Code · Changelog", "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md", "oficial": true, "audiencias": ["sagitaz"] },
-    { "id": "anthropics-github", "nombre": "GitHub · anthropics", "url": "https://github.com/anthropics", "oficial": true, "audiencias": ["sagitaz"] },
-    { "id": "anthropics-skills", "nombre": "GitHub · anthropics/skills", "url": "https://github.com/anthropics/skills", "oficial": true, "audiencias": ["sagitaz", "finanzas"] },
-    { "id": "claude-plugins-official", "nombre": "GitHub · anthropics/claude-plugins-official", "url": "https://github.com/anthropics/claude-plugins-official", "oficial": true, "audiencias": ["sagitaz"] },
-    { "id": "youtube-anthropic", "nombre": "YouTube · Anthropic", "url": "https://www.youtube.com/@anthropic-ai", "oficial": true, "audiencias": ["transversal"] },
-    { "id": "youtube-claude", "nombre": "YouTube · Claude", "url": "https://www.youtube.com/@claude", "oficial": true, "audiencias": ["transversal", "finanzas", "woztell"] },
-    { "id": "zoho-mcp", "nombre": "Zoho MCP", "url": "https://www.zoho.com/mcp/", "oficial": true, "audiencias": ["sagitaz", "finanzas"] },
-    { "id": "zoho-blog", "nombre": "Blog de Zoho", "url": "https://blogs.zoho.com/", "oficial": true, "audiencias": ["sagitaz", "finanzas"] },
-    { "id": "whatsapp-changelog", "nombre": "WhatsApp Business Platform · Changelog", "url": "https://developers.facebook.com/docs/whatsapp/business-platform/changelog", "oficial": true, "audiencias": ["woztell"] },
-    { "id": "whatsapp-business-blog", "nombre": "WhatsApp Business · Blog", "url": "https://business.whatsapp.com/blog", "oficial": true, "audiencias": ["woztell"] }
+    {
+      "id": "anthropic-news",
+      "nombre": "Anthropic · Noticias",
+      "url": "https://www.anthropic.com/news",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "sagitaz",
+        "woztell",
+        "finanzas"
+      ]
+    },
+    {
+      "id": "anthropic-engineering",
+      "nombre": "Anthropic · Engineering",
+      "url": "https://www.anthropic.com/engineering",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "sagitaz"
+      ]
+    },
+    {
+      "id": "claude-product-updates",
+      "nombre": "Claude · Product updates",
+      "url": "https://claude.com/resources/product-updates",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "sagitaz",
+        "woztell",
+        "finanzas"
+      ],
+      "notas": "Feed oficial de novedades de producto. Fuente principal. La página carga más entradas con 'View more'."
+    },
+    {
+      "id": "claude-best-practices",
+      "nombre": "Claude · Best practices",
+      "url": "https://claude.com/resources/best-practices",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "sagitaz",
+        "woztell",
+        "finanzas"
+      ],
+      "notas": "Guías prácticas → tipo docs (formato guia)."
+    },
+    {
+      "id": "claude-webinars",
+      "nombre": "Claude · Webinars",
+      "url": "https://claude.com/resources/webinars",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "sagitaz",
+        "finanzas"
+      ],
+      "notas": "Formación en directo y grabada → tipo docs (formato enlace), tag formacion. Incluye la revisión mensual del roadmap ('Claude Rearview')."
+    },
+    {
+      "id": "claude-apps-release-notes",
+      "nombre": "Claude · Release notes (apps, Teams, Cowork)",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "finanzas"
+      ]
+    },
+    {
+      "id": "claude-platform-release-notes",
+      "nombre": "Claude Platform · Release notes (API)",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz",
+        "woztell"
+      ]
+    },
+    {
+      "id": "claude-code-changelog",
+      "nombre": "Claude Code · Changelog",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz"
+      ]
+    },
+    {
+      "id": "anthropics-github",
+      "nombre": "GitHub · anthropics",
+      "url": "https://github.com/anthropics",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz"
+      ]
+    },
+    {
+      "id": "anthropics-skills",
+      "nombre": "GitHub · anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz",
+        "finanzas"
+      ]
+    },
+    {
+      "id": "claude-plugins-official",
+      "nombre": "GitHub · anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz"
+      ]
+    },
+    {
+      "id": "youtube-anthropic",
+      "nombre": "YouTube · Anthropic",
+      "url": "https://www.youtube.com/@anthropic-ai",
+      "oficial": true,
+      "audiencias": [
+        "transversal"
+      ]
+    },
+    {
+      "id": "youtube-claude",
+      "nombre": "YouTube · Claude",
+      "url": "https://www.youtube.com/@claude",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "finanzas",
+        "woztell"
+      ]
+    },
+    {
+      "id": "zoho-mcp",
+      "nombre": "Zoho MCP",
+      "url": "https://www.zoho.com/mcp/",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz",
+        "finanzas"
+      ]
+    },
+    {
+      "id": "zoho-blog",
+      "nombre": "Blog de Zoho",
+      "url": "https://blogs.zoho.com/",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz",
+        "finanzas"
+      ]
+    },
+    {
+      "id": "whatsapp-changelog",
+      "nombre": "WhatsApp Business Platform · Changelog",
+      "url": "https://developers.facebook.com/docs/whatsapp/business-platform/changelog",
+      "oficial": true,
+      "audiencias": [
+        "woztell"
+      ]
+    },
+    {
+      "id": "whatsapp-business-blog",
+      "nombre": "WhatsApp Business · Blog",
+      "url": "https://business.whatsapp.com/blog",
+      "oficial": true,
+      "audiencias": [
+        "woztell"
+      ]
+    }
   ],
   "busquedas": {
-    "sagitaz": ["Claude Zoho", "Claude Zoho CRM MCP", "Claude connector Zoho", "Claude skills plugin repository", "Claude projects collaboration", "Claude marketing"],
-    "woztell": ["Claude WhatsApp", "Claude Meta connector", "Claude WhatsApp Business API", "Claude HubSpot connector", "Claude Salesforce connector", "Claude Zapier", "Claude design ads campaign"],
-    "finanzas": ["Claude Zoho Books", "Claude Zoho Billing", "Claude Excel", "Claude spreadsheets finance", "Claude Cowork finance", "Claude PDF Word"],
-    "transversal": ["Claude Team plan new features", "Claude Projects update", "Claude memory", "Claude desktop app update", "Claude admin controls"]
-  }
+    "sagitaz": [
+      "Claude Zoho",
+      "Claude Zoho CRM MCP",
+      "Claude connector Zoho",
+      "Claude skills plugin repository",
+      "Claude projects collaboration",
+      "Claude marketing"
+    ],
+    "woztell": [
+      "Claude WhatsApp",
+      "Claude Meta connector",
+      "Claude WhatsApp Business API",
+      "Claude HubSpot connector",
+      "Claude Salesforce connector",
+      "Claude Zapier",
+      "Claude design ads campaign"
+    ],
+    "finanzas": [
+      "Claude Zoho Books",
+      "Claude Zoho Billing",
+      "Claude Excel",
+      "Claude spreadsheets finance",
+      "Claude Cowork finance",
+      "Claude PDF Word"
+    ],
+    "transversal": [
+      "Claude Team plan new features",
+      "Claude Projects update",
+      "Claude memory",
+      "Claude desktop app update",
+      "Claude admin controls"
+    ]
+  },
+  "catalogos": [
+    {
+      "id": "claude-marketplace",
+      "nombre": "Claude Marketplace · Conectores y plugins",
+      "url": "https://claude.com/marketplace/connectors-plugins",
+      "oficial": true,
+      "audiencias": [
+        "sagitaz",
+        "woztell",
+        "finanzas",
+        "transversal"
+      ],
+      "comando": "node scripts/catalogos.js marketplace --desde <inicio de la ventana>",
+      "notas": "Tiene fecha de alta (addedAt). Solo interesan conectores/plugins de herramientas del grupo: Zoho (CRM, Books, Projects, Desk, Analytics, Bigin…), Meta/WhatsApp, HubSpot, Salesforce, Zapier, Canva, Figma, Microsoft 365/Excel, Xero/QuickBooks."
+    },
+    {
+      "id": "claude-academy",
+      "nombre": "Claude Academy · Cursos y tutoriales",
+      "url": "https://academy.claude.com/",
+      "oficial": true,
+      "audiencias": [
+        "transversal",
+        "finanzas",
+        "sagitaz"
+      ],
+      "comando": "node scripts/catalogos.js academy",
+      "notas": "Sin fechas: se compara con agents/estado/catalogo.json. Lo nuevo → tipo docs (formato enlace), tag formacion."
+    }
+  ]
 }

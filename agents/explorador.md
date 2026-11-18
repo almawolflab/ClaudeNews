@@ -44,6 +44,15 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
   - abre los resultados que parezcan de la ventana y devuelve solo candidatos con **URL abierta, fecha de publicación y por qué encaja**, o "sin novedades";
   - devuelve también la lista de búsquedas ejecutadas.
 - Que una audiencia no tenga resultados es normal; saltarte sus búsquedas no. En el informe pon "búsquedas: N de N".
+- **Fuente principal: `claude-product-updates`.** Es el feed oficial de novedades de producto de Claude; revísalo siempre primero. `claude-best-practices` y `claude-webinars` son guías y formación oficiales.
+
+### 3b · Catálogos oficiales (`catalogos` en `fuentes.json`)
+
+- **Marketplace:** `node scripts/catalogos.js marketplace --desde <primer día de la ventana>`. Devuelve los conectores y plugins dados de alta en la ventana. Quédate **solo** con los de herramientas que usa el grupo (lista en `notas` del catálogo) y abre su `url` antes de redactar. Un conector oficial nuevo (p. ej. de Zoho) es una `novedad` con `fecha` = `addedAt`.
+- **Academy:** `node scripts/catalogos.js academy`. Devuelve los cursos y tutoriales que no estaban en `agents/estado/catalogo.json`. Abre cada uno, decide si encaja y redáctalo como `docs` (`formato: "enlace"`, tag `formacion`) con `fecha` = hoy (Academy no publica fechas).
+  - **Si vas a abrir PR**, ejecuta también `node scripts/catalogos.js academy --guardar` y añade `agents/estado/catalogo.json` al commit, aunque ningún curso nuevo haya pasado el juez (así no se vuelven a evaluar).
+  - Si no hay PR ese día, no lo guardes: se volverán a evaluar mañana.
+- Si un comando falla (cambio de formato de la página), anótalo en el informe y sigue.
 - **Abre cada página** candidata. Solo cuenta lo que hayas leído en la propia página: fecha de publicación, qué es, a quién afecta.
 - Para videos de YouTube: el `youtubeId` sale de la URL que has abierto (`watch?v=XXXXXXXXXXX`), nunca de memoria.
 - Para repos: `repoUrl` = `https://github.com/owner/repo` que hayas abierto; `licencia` = la que muestre el repo (SPDX) o `null`.
@@ -54,7 +63,8 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
 Cumple `templates/item.schema.json` al pie de la letra (`additionalProperties: false`):
 
 - `id`: `AAAA-MM-DD-slug` con la **fecha de la novedad** y un slug corto en minúsculas.
-- `tipo`: `novedad` (anuncio/función), `video`, `docs` (guía o documentación; `formato`: `guia`/`enlace`/`pdf`), `repo`. (`caso` solo en el paso 6.)
+- `tipo`: `novedad` (anuncio/función/conector nuevo), `video`, `docs` (guía o documentación; `formato`: `guia`/`enlace`/`pdf`), `repo`. (`caso` solo en el paso 6.)
+  - **Formación** (cursos y tutoriales de Academy, webinars): `docs` con `formato: "enlace"` y el tag `formacion`. En webinars en directo, pon la fecha y hora de la sesión en el `resumen`.
 - `empresas`: solo las que de verdad encajan.
 - `titulo` (≤ 140) y `resumen` (≤ 400): en español, fieles a la fuente, sin adjetivos de marketing ni datos que la fuente no diga.
 - `fecha`: la de publicación de la fuente.
@@ -92,7 +102,7 @@ Para cada ítem aprobado, comprueba que su `fecha` cae en alguna edición de `da
 
 1. Si no queda **ningún** ítem aprobado: no crees rama ni PR. Termina con el informe (paso 9).
 2. Crea la rama `explorador/<hoy>` (si existe, `explorador/<hoy>-2`).
-3. Añade los ítems a `data/items.json` → `items` (orden por `fecha` descendente) y pon `actualizado` = hoy. **No toques** HTML, CSS, JS, schemas ni otros archivos (salvo `data/editions.json` si el paso 7 lo pide).
+3. Añade los ítems a `data/items.json` → `items` (orden por `fecha` descendente) y pon `actualizado` = hoy. **No toques** HTML, CSS, JS, schemas ni otros archivos (salvo `data/editions.json` si el paso 7 lo pide y `agents/estado/catalogo.json` según el paso 3b).
 4. Ejecuta `node scripts/validate.js --offline` (schema, duplicados, destacada, `youtubeId`). Si da errores, corrige o **quita** el ítem que los cause y repite hasta **0 errores**; no abras el PR con errores. Las URLs no se comprueban aquí porque el entorno de la nube bloquea algunos dominios (p. ej. YouTube): ya las abriste tú en el paso 3 y la Action del PR las vuelve a comprobar desde GitHub.
 5. Commit: `contenido: N novedades (<hoy>)` con un cuerpo que liste los ids.
 6. Push y PR con `gh pr create --label explorador --title "ClaudeNews: N novedades (<hoy>)" --body-file <archivo>`. Si la etiqueta no existe, créala: `gh label create explorador --color C13B2F --description "PR del agente explorador"`.
