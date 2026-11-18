@@ -38,7 +38,11 @@ ClaudeNews/
 │   ├── item.schema.json       # JSON Schema de un ítem
 │   ├── editions.schema.json   # JSON Schema de editions.json
 │   └── examples/              # Un ejemplo válido por tipo
-├── scripts/validate.js        # Validación (schema, duplicados, URLs)
+├── agents/
+│   ├── explorador.md          # Prompt del explorador diario
+│   ├── juez.md                # Prompt del juez (subagente independiente)
+│   └── fuentes.json           # Fuentes, búsquedas por audiencia y límites
+├── scripts/validate.js        # Validación (schema, duplicados, URLs, destacada, youtubeId)
 └── .github/workflows/validate-pr.yml
 ```
 
@@ -53,7 +57,9 @@ ClaudeNews/
 - **Videos** de YouTube: se abren en un modal (`youtube-nocookie.com`).
 - **Proponer un caso:** activa el modo comentarios (`⌥ + C` o el botón ✍️), que envía la nota al webhook del Lab.
 
-## Cómo añadir contenido
+## Cómo añadir contenido a mano
+
+Lo normal es que el contenido llegue solo por el explorador (ver "Pipeline"). Para añadir algo a mano:
 
 1. Copia el ejemplo del tipo que corresponda desde `templates/examples/` a `data/drafts/AAAA-MM-DD-slug.json`.
 2. Rellena los campos. Reglas:
@@ -70,13 +76,17 @@ Para abrir una edición nueva, añade una entrada a `ediciones` en `data/edition
 ## Pipeline de contenido
 
 ```
-Explorador (diario) ──► PR con JSON ──► validate-pr.yml ──► merge = aprobación ──► GitHub Pages
+Explorador (diario) ──► Juez ──► PR con JSON ──► validate-pr.yml ──► merge = aprobación ──► GitHub Pages
 ```
 
-1. **Explorador:** una tarea diaria busca novedades que crucen Claude con los usos del grupo (Sagitaz ↔ Zoho, Woztell ↔ Meta/WhatsApp/ADS, Finanzas ↔ Zoho Books/Billing/ofimática, Transversal ↔ plan Teams). Si un día no hay nada relevante, no abre PR.
-2. **Validación:** la GitHub Action ejecuta `scripts/validate.js` (schema, ids duplicados, URLs que responden).
-3. **Aprobación humana:** el merge del PR es la aprobación.
-4. **Publicación:** Pages sirve `main` y la página lee los JSON. No hay que tocar el HTML.
+1. **Explorador** (`agents/explorador.md`): rutina de Claude Code en la nube, **lunes a viernes a las 06:00 UTC** (07:00 en Madrid en invierno, 08:00 en verano). Busca en `agents/fuentes.json` novedades de las últimas 72 h que crucen Claude con los usos del grupo (Sagitaz ↔ Zoho, Woztell ↔ Meta/WhatsApp/ADS, Finanzas ↔ Zoho Books/Billing/ofimática/Cowork, Transversal ↔ plan Teams). Máximo 5 ítems al día; los lunes, como mucho 1 caso de uso (máx. 3 por edición). Si cambia de mes, crea la edición nueva. No repite nada publicado, en un PR abierto o en un PR cerrado sin merge.
+2. **Juez** (`agents/juez.md`): subagente independiente que solo ve el JSON y la fuente. Aprueba o rechaza con criterios fijos; lo rechazado se lista en el PR con el motivo.
+3. **PR:** rama `explorador/AAAA-MM-DD`, etiqueta `explorador`. Añade los ítems directamente a `data/items.json`. Si un día no hay nada relevante, no abre PR.
+4. **Validación:** la GitHub Action ejecuta `scripts/validate.js`.
+5. **Aprobación humana:** el merge del PR es la aprobación. Para quitar un ítem, bórralo en la rama antes del merge. **Cerrar sin merge = rechazado**: no se vuelve a proponer.
+6. **Publicación:** Pages sirve `main` y la página lee los JSON. No hay que tocar el HTML.
+
+Para cambiar qué busca el explorador, edita `agents/fuentes.json` o `agents/explorador.md`: la rutina los lee del repo en cada ejecución.
 
 Criterios de relevancia completos: issue 001 en `almawolf-lab/issues/` (repo Corpus Method).
 

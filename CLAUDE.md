@@ -45,6 +45,12 @@ Campos por tipo (ver `templates/item.schema.json`): `video` → `youtubeId`; `re
 
 `vendor/web-review-mode.js` (copia del Lab) con `projectName: 'claudenews-vertical'` en `assets/js/review-config.js`. Los botones "Proponer" activan el modo comentarios. Si se actualiza el script en el Lab, copiarlo de nuevo a `vendor/`.
 
-## Pipeline
+## Pipeline y agentes
 
-Explorador diario → PR con JSON en `data/drafts/` (o directo en `items.json`) → `validate-pr.yml` → merge de Gabriel = aprobación → Pages. Las GitHub Issues son solo para desarrollo.
+Explorador diario → juez → PR que añade ítems a `data/items.json` → `validate-pr.yml` → merge de Gabriel = aprobación → Pages. Las GitHub Issues son solo para desarrollo. Spec: issue 003 en `almawolf-lab/issues/`.
+
+- `agents/explorador.md` — prompt completo del explorador. La rutina en la nube solo le dice "lee y sigue este archivo": **los cambios de comportamiento se hacen aquí**, no en la rutina.
+- `agents/juez.md` — prompt del juez (subagente independiente, criterios numerados, salida JSON).
+- `agents/fuentes.json` — fuentes (URLs comprobadas), búsquedas por audiencia, `ventanaHoras` y `maxItemsDia`.
+- PRs del explorador: etiqueta `explorador`. Cerrar sin merge = rechazado para siempre.
+- Rutina: lunes a viernes, 06:00 UTC. Se gestiona en https://claude.ai/code/routines.
