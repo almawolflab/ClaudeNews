@@ -1,0 +1,12 @@
+{
+  "id": "2026-11-20-ejemplo-video",
+  "tipo": "video",
+  "empresas": ["transversal"],
+  "titulo": "[Ejemplo] Título del video",
+  "resumen": "De qué trata el video y qué se aprende.",
+  "fecha": "2026-11-20",
+  "fuente": { "url": "https://www.youtube.com/watch?v=EJEMPLO0000", "nombre": "YouTube", "oficial": false },
+  "featured": false,
+  "estado": "borrador",
+  "youtubeId": "EJEMPLO0000"
+}

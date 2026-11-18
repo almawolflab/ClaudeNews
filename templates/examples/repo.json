@@ -1,0 +1,12 @@
+{
+  "id": "2026-11-20-ejemplo-repo",
+  "tipo": "repo",
+  "empresas": ["sagitaz"],
+  "titulo": "[Ejemplo] Repositorio recomendado",
+  "resumen": "Qué contiene y para qué skill nos sirve.",
+  "fecha": "2026-11-20",
+  "fuente": { "url": "https://github.com/ejemplo/repo", "nombre": "GitHub", "oficial": false },
+  "estado": "borrador",
+  "repoUrl": "https://github.com/ejemplo/repo",
+  "licencia": "MIT"
+}

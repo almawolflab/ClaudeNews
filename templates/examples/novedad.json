@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-20-ejemplo-novedad",
+  "tipo": "novedad",
+  "empresas": ["sagitaz"],
+  "titulo": "[Ejemplo] Título corto de la novedad",
+  "resumen": "Qué es y para qué nos sirve, en una o dos frases.",
+  "fecha": "2026-11-20",
+  "fuente": { "url": "https://example.com/novedad", "nombre": "Anthropic", "oficial": true },
+  "tags": ["zoho", "conectores"],
+  "featured": false,
+  "puntos": ["Cambio o beneficio concreto para el equipo."],
+  "estado": "borrador",
+  "validacion": { "juez": "explorador-v1", "fecha": "2026-11-20", "notas": "Por qué encaja: Sagitaz implementa Zoho CRM." }
+}

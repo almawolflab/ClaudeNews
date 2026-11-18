@@ -1,0 +1,16 @@
+{
+  "id": "2026-11-20-ejemplo-caso",
+  "tipo": "caso",
+  "empresas": ["woztell"],
+  "titulo": "[Ejemplo] Nombre del caso de uso propuesto",
+  "resumen": "Qué haría Claude y qué problema resolvería, en dos o tres frases.",
+  "fecha": "2026-11-20",
+  "fuente": { "url": "https://example.com/novedad-base", "nombre": "Anthropic", "oficial": true },
+  "estado": "borrador",
+  "empresa": "woztell",
+  "novedadBase": "Nombre de la novedad en la que se basa",
+  "porQueEncaja": "Dato del grupo que lo justifica: proyecto, proceso o necesidad.",
+  "primerPaso": "Prueba concreta y pequeña para validarlo.",
+  "esfuerzo": "bajo",
+  "impacto": "Ahorro de tiempo"
+}

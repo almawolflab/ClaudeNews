@@ -1,0 +1,11 @@
+{
+  "id": "2026-11-20-ejemplo-docs",
+  "tipo": "docs",
+  "empresas": ["finanzas"],
+  "titulo": "[Ejemplo] Guía de buenas prácticas",
+  "resumen": "Qué cubre la guía y a quién le sirve.",
+  "fecha": "2026-11-20",
+  "fuente": { "url": "https://example.com/guia", "nombre": "Anthropic Docs", "oficial": true },
+  "estado": "borrador",
+  "formato": "guia"
+}
