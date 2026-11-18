@@ -27,7 +27,7 @@
     },
     "recursos": [
       { "id": "guia", "titulo": "Guía interna de uso", "texto": null, "url": null, "cta": "Abrir guía", "icono": "doc" },
-      { "id": "formacion", "titulo": "Formación", "texto": null, "url": null, "cta": "Inscribirme", "icono": "formacion" },
+      { "id": "formacion", "titulo": "Formación", "texto": "Cursos y tutoriales gratuitos y oficiales de Anthropic en Claude Academy: Claude, Cowork, Claude Code, MCP y AI Fluency.", "url": "https://academy.claude.com/", "cta": "Ir a Claude Academy", "icono": "formacion" },
       { "id": "canal", "titulo": "Canal de dudas", "texto": null, "url": null, "cta": "Ir al canal", "icono": "chat" }
     ],
     "contacto": {

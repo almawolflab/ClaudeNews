@@ -184,7 +184,7 @@
 
 /* ── Recursos ─────────────────────────────────────────────────────────── */
 .recursos-inner { padding-top: clamp(56px, 7vw, 96px); border-top: 1px solid var(--border); }
-.recursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+.recursos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 24px; }
 .recurso { display: flex; flex-direction: column; gap: 12px; min-height: 200px; padding: 28px; border-radius: var(--r-card); background: var(--bg); color: var(--navy); text-decoration: none; }
 .recurso:hover { color: var(--navy); filter: brightness(.98); }
 .recurso:first-child { background: var(--navy); color: var(--white); }
