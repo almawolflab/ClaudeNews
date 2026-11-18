@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ClaudeNews — AlmaWolf</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+
+<!-- Gate de acceso (barrera de cortesía: el repo es público) -->
+<div id="gate" class="gate">
+  <form class="gate-box" id="gate-form" novalidate>
+    <img class="gate-logo" src="assets/img/logo-almawolf-lab.svg" alt="AlmaWolf Lab" height="34">
+    <h1 class="gate-title">ClaudeNews</h1>
+    <p class="gate-sub">Área restringida.<br>Introduce la contraseña para acceder.</p>
+    <label class="visually-hidden" for="gate-pwd">Contraseña</label>
+    <input class="gate-input" id="gate-pwd" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+    <button class="gate-btn" type="submit">Acceder</button>
+    <p class="gate-err" id="gate-err" role="alert"></p>
+  </form>
+</div>
+
+<div id="app" hidden>
+
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="diamond" aria-hidden="true"></span>
+      <span class="brand-name" data-bind="marca"></span>
+      <span class="brand-sub" data-bind="nombre"></span>
+    </a>
+    <nav class="site-nav" aria-label="Secciones">
+      <a href="#novedades">Novedades</a>
+      <a href="#impacto" data-for-section="impacto">Casos de uso</a>
+      <a href="#cronologia" data-for-section="cronologia">Cronología</a>
+      <a href="#recursos" data-for-section="recursos">Recursos</a>
+      <button type="button" class="btn btn-navy btn-sm" data-action="proponer">Proponer un caso</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="top" class="hero">
+      <div class="poly poly-hero-bg" aria-hidden="true"></div>
+      <div class="poly poly-hero-red" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow" id="hero-eyebrow"></p>
+        <h1 class="hero-title"><span id="hero-title"></span> <strong id="hero-title-strong"></strong></h1>
+        <p class="hero-intro" id="hero-intro"></p>
+        <div class="hero-ctas">
+          <a class="btn btn-red btn-lg" href="#novedades">Ver novedades
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          </a>
+          <a class="btn btn-outline btn-lg" href="#recursos" data-for-section="recursos">Cómo empezar</a>
+        </div>
+        <dl class="hero-meta" id="hero-meta"></dl>
+      </div>
+    </section>
+
+    <div class="filters" role="region" aria-label="Filtros">
+      <div class="filters-inner">
+        <div class="filter-row">
+          <span class="filter-label" id="fl-empresa">Empresa</span>
+          <div class="chips" role="group" aria-labelledby="fl-empresa" id="chips-empresa"></div>
+        </div>
+        <div class="filter-row">
+          <span class="filter-label" id="fl-tipo">Tipo</span>
+          <div class="chips" role="group" aria-labelledby="fl-tipo" id="chips-tipo"></div>
+        </div>
+        <div class="filter-row filter-row--edition" id="edition-picker" hidden>
+          <label class="filter-label" for="edition-select">Edición</label>
+          <select class="select" id="edition-select"></select>
+        </div>
+      </div>
+    </div>
+
+    <section id="novedades" class="section">
+      <div class="container stack-xl">
+        <div class="section-head section-head--split">
+          <div class="stack-md section-head-main">
+            <p class="eyebrow" data-section-eyebrow="novedades"></p>
+            <h2 class="h2" data-section-title="novedades"></h2>
+          </div>
+          <p class="section-intro" data-section-intro="novedades"></p>
+        </div>
+        <div id="featured"></div>
+        <div class="card-grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p class="empty-title" id="empty-title"></p>
+          <div class="empty-actions">
+            <button type="button" class="btn btn-red" data-action="proponer">Proponer contenido</button>
+            <button type="button" class="btn btn-outline" data-action="limpiar-filtros">Quitar filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impacto" class="section section--dots">
+      <div class="container stack-xl">
+        <div class="section-head stack-md">
+          <p class="eyebrow eyebrow--dark" data-section-eyebrow="impacto"></p>
+          <h2 class="h2" data-section-title="impacto"></h2>
+          <p class="section-intro section-intro--wide" data-section-intro="impacto"></p>
+        </div>
+        <div class="caso-grid" id="casos"></div>
+      </div>
+    </section>
+
+    <section id="cronologia" class="section">
+      <div class="container timeline-layout">
+        <div class="stack-md">
+          <p class="eyebrow" data-section-eyebrow="cronologia"></p>
+          <h2 class="h2" data-section-title="cronologia"></h2>
+          <p class="section-intro" data-section-intro="cronologia"></p>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <section id="recursos" class="section section--recursos">
+      <div class="container recursos-inner stack-lg">
+        <div class="stack-md section-head-main">
+          <p class="eyebrow" data-section-eyebrow="recursos"></p>
+          <h2 class="h2" data-section-title="recursos"></h2>
+        </div>
+        <div class="recursos-grid" id="recursos-grid"></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="poly poly-contacto" aria-hidden="true"></div>
+      <div class="container contacto-inner">
+        <h2 class="contacto-title" id="contacto-title"></h2>
+        <p class="contacto-text" id="contacto-text"></p>
+        <div>
+          <button type="button" class="btn btn-white btn-lg" data-action="proponer" id="contacto-cta"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span id="footer-left"></span>
+    <span id="footer-right"></span>
+  </footer>
+</div>
+
+<dialog class="modal" id="video-modal" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 class="modal-title" id="modal-title"></h2>
+      <button type="button" class="modal-close" data-action="cerrar-modal" aria-label="Cerrar">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-media" id="modal-media"></div>
+    <a class="modal-source" id="modal-source" target="_blank" rel="noopener">Ver en YouTube →</a>
+  </div>
+</dialog>
+
+<script src="assets/js/review-config.js"></script>
+<script src="vendor/web-review-mode.js" defer></script>
+</body>
+</html>

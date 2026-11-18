@@ -1,0 +1,35 @@
+/* Tokens del sistema de diseño de AlmaWolf Lab (ver almawolf-lab/CLAUDE.md). */
+:root {
+  /* Marca */
+  --red: #C13B2F;
+  --red-dark: #9A2E25;
+  --navy: #1C1C2E;
+  --bg: #EDECEB;
+  --white: #FFFFFF;
+  --gray: #6B7280;
+  --dark: #0F1119;
+  --border: #D5D4D2;
+
+  /* Texto secundario (contraste AA sobre --white y --bg) */
+  --text-2: #4B5563;
+  --text-3: #374151;
+  --on-dark-2: rgba(255, 255, 255, 0.72);
+  --on-dark-line: rgba(255, 255, 255, 0.12);
+
+  /* Tipografía */
+  --f: 'Inter', system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Espaciado y layout */
+  --pad-x: clamp(24px, 6vw, 80px);
+  --pad-y: clamp(64px, 8vw, 112px);
+  --maxw: 1280px;
+  --header-h: 73px;
+
+  /* Radios */
+  --r-sm: 6px;
+  --r-btn: 8px;
+  --r-md: 10px;
+  --r-card: 14px;
+  --r-lg: 16px;
+}
