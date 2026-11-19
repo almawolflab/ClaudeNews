@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-18",
+  "actualizado": "2026-11-19",
   "items": [
     {
       "id": "2026-11-19-rearview-noviembre",
@@ -14,6 +14,19 @@
       "estado": "aprobado",
       "formato": "enlace",
       "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, repaso mensual de novedades y ajustes de administración." }
+    },
+    {
+      "id": "2026-11-17-desktop-v6-6395-0",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Claude Desktop v6.6395.0: los ajustes MCP gestionados también se aplican a Chat y Cowork",
+      "resumen": "La versión 6.6395.0 de Claude Desktop (17 de noviembre de 2026) aplica los ajustes gestionados allowedMcpServers y deniedMcpServers también a los servidores MCP locales añadidos en Ajustes > Developer en Chat y Cowork, no solo en Code. En macOS, el perfil de usuario se ignora si existe un perfil de máquina: conviene mover antes los ajustes necesarios, como los periodos de retención.",
+      "fecha": "2026-11-17",
+      "fuente": { "url": "https://claude.com/docs/cowork/claude-desktop-changelog", "nombre": "Claude · Changelog de Claude Desktop", "oficial": true },
+      "tags": ["desktop", "administracion", "mcp"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-19", "notas": "Por qué encaja: transversal, afecta a la app de escritorio y a los controles de administración que usa todo el grupo." }
     },
     {
       "id": "2026-11-17-canal-versiones-desktop",
