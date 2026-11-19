@@ -19,10 +19,9 @@ export async function loadData() {
 export const itemsOfEdition = (items, ed) =>
   items.filter((it) => it.fecha >= ed.desde && (!ed.hasta || it.fecha <= ed.hasta));
 
-/** URL principal de un ítem (o null si aún no la tiene). */
+/** URL principal de un ítem: la fuente; en un repo sin fuente propia, el repositorio. */
 export function itemUrl(it) {
-  if (it.tipo === 'repo' && it.repoUrl) return it.repoUrl;
-  return it.fuente?.url ?? null;
+  return it.fuente?.url ?? (it.tipo === 'repo' ? it.repoUrl : null) ?? null;
 }
 
 export const youtubeThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;

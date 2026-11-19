@@ -58,15 +58,15 @@
       "id": "2026-11-11-ofimatica-finanzas",
       "tipo": "video",
       "empresas": ["finanzas"],
-      "titulo": "Funcionalidades de ofimática de Claude útiles para finanzas",
-      "resumen": "Video sobre las funciones de ofimática de Claude que sirven al área de Finanzas.",
+      "titulo": "Claude para finanzas: tutorial completo desde cero",
+      "resumen": "Tutorial en español de Mert Durmazer (Agencia IA) para empezar a usar Claude en tareas de finanzas desde cero; incluye un kit gratuito.",
       "fecha": "2026-11-11",
-      "fuente": { "url": null, "nombre": "YouTube", "oficial": false },
-      "tags": ["ofimatica"],
+      "fuente": { "url": "https://www.youtube.com/watch?v=qMbgKptSWtg", "nombre": "YouTube · Mert Durmazer (Agencia IA)", "oficial": false },
+      "tags": ["ofimatica", "tutorial"],
       "featured": false,
       "estado": "aprobado",
-      "youtubeId": null,
-      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001. Falta el video (youtubeId y URL)." }
+      "youtubeId": "qMbgKptSWtg",
+      "validacion": { "juez": "humano", "fecha": "2026-11-19", "notas": "Ítem semilla de la issue 001. Video indicado por Gabriel (2026-11-19)." }
     },
     {
       "id": "2026-11-11-plugin-ders-dercas",
@@ -98,17 +98,17 @@
     {
       "id": "2026-11-11-repos-skills",
       "tipo": "repo",
-      "empresas": ["sagitaz"],
-      "titulo": "Repositorios para crear nuevas skills útiles",
-      "resumen": "Selección de repositorios de referencia para crear skills de Claude.",
+      "empresas": ["transversal"],
+      "titulo": "Claude Code Templates: catálogo de agentes, comandos, skills y MCP",
+      "resumen": "Catálogo abierto con más de 1.990 componentes listos para Claude Code (agentes, comandos, skills, integraciones MCP, hooks y ajustes) que se instalan con su CLI. Punto de partida para crear skills propias.",
       "fecha": "2026-11-11",
-      "fuente": { "url": null, "nombre": "GitHub", "oficial": false },
-      "tags": ["skills"],
+      "fuente": { "url": "https://www.aitmpl.com/", "nombre": "aitmpl.com", "oficial": false },
+      "tags": ["skills", "claude-code"],
       "featured": false,
       "estado": "aprobado",
-      "repoUrl": null,
-      "licencia": null,
-      "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001. Falta la URL del repositorio." }
+      "repoUrl": "https://github.com/davila7/claude-code-templates",
+      "licencia": "MIT",
+      "validacion": { "juez": "humano", "fecha": "2026-11-19", "notas": "Ítem semilla de la issue 001. Enlace indicado por Gabriel (2026-11-19); pasa a transversal." }
     },
     {
       "id": "2026-11-10-conectores-interactivos",
