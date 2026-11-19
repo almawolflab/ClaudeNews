@@ -57,6 +57,7 @@ ClaudeNews/
   - Los ítems `tipo: "caso"` van a **Cómo se podría aplicar**; el resto, a **Novedades**.
   - **Recursos** solo muestra las tarjetas con `url`.
 - **Filtros** empresa × tipo combinables, reflejados en la URL (`?empresa=sagitaz&tipo=video`). Se puede compartir el enlace ya filtrado. Si no hay resultados, se muestra un estado vacío.
+  - Al filtrar por **Sagitaz, Woztell o Finanzas** también aparece lo **Transversal** (lo que vale para todo el grupo). El filtro **Transversal** muestra solo lo común.
 - **Videos** de YouTube: se abren en un modal (`youtube-nocookie.com`).
 - **Proponer un caso:** activa el modo comentarios (`⌥ + C` o el botón ✍️), que envía la nota al webhook del Lab.
 

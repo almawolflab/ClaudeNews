@@ -39,6 +39,8 @@ Tokens en `assets/css/tokens.css` (los del Lab: `--red`, `--navy`, `--bg`, `--wh
 | `data/items.json` | `actualizado` + `items` (solo `estado: "aprobado"`) |
 | `data/drafts/*.json` | un ítem por archivo, `estado: "borrador"` |
 
+Filtro de empresa (`assets/js/filters.js`, `matches`): Sagitaz, Woztell y Finanzas incluyen los ítems `transversal`; el filtro `transversal` muestra solo esos. Como mucho **una** destacada (`featured: true`) por edición.
+
 Campos por tipo (ver `templates/item.schema.json`): `video` → `youtubeId`; `repo` → `repoUrl`, `licencia`; `docs` → `formato`; `caso` → `empresa`, `novedadBase`, `porQueEncaja`, `primerPaso`, `esfuerzo`, `impacto`. Opcional en cualquiera: `featured`, `puntos` (lista "Qué cambia para nosotros" de la destacada).
 
 ## Comentarios

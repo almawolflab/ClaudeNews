@@ -26,7 +26,15 @@ export function writeState(state, ediciones) {
   if (url !== `${location.pathname}${location.search}${location.hash}`) history.pushState(null, '', url);
 }
 
-export const matches = (it, { empresa, tipo }) =>
-  (!empresa || it.empresas.includes(empresa)) && (!tipo || it.tipo === tipo);
+/**
+ * Filtro de empresa: Sagitaz, Woztell y Finanzas ven lo suyo más lo Transversal
+ * (lo que vale para todo el grupo). El filtro "transversal" muestra solo lo común.
+ */
+const matchesEmpresa = (it, empresa) =>
+  !empresa ||
+  it.empresas.includes(empresa) ||
+  (empresa !== 'transversal' && it.empresas.includes('transversal'));
+
+export const matches = (it, { empresa, tipo }) => matchesEmpresa(it, empresa) && (!tipo || it.tipo === tipo);
 
 export const applyFilters = (items, state) => items.filter((it) => matches(it, state));
