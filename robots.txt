@@ -1,0 +1,7 @@
+# Sitio interno de AlmaWolf: no indexar.
+# Ojo: los buscadores solo leen robots.txt en la raíz del dominio. En GitHub Pages
+# de proyecto (almawolflab.github.io/<repo>/) este archivo no se aplica; lo que
+# evita la indexación es el <meta name="robots" content="noindex, nofollow"> de cada página.
+# Sí se aplicará si el sitio se sirve en un dominio propio.
+User-agent: *
+Disallow: /
