@@ -1,5 +1,5 @@
 {
-  "comprobado": "2026-11-18",
+  "comprobado": "2026-11-19",
   "ventanaHoras": 72,
   "maxItemsDia": 5,
   "fuentes": [
@@ -123,22 +123,24 @@
     {
       "id": "youtube-anthropic",
       "nombre": "YouTube · Anthropic",
-      "url": "https://www.youtube.com/@anthropic-ai",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCrDwWp7EBBv4NwvScIpBDOA",
       "oficial": true,
       "audiencias": [
         "transversal"
-      ]
+      ],
+      "notas": "Feed RSS del canal (más fiable que la página). Cada <entry> trae <published>, <link href=\"https://www.youtube.com/watch?v=…\"> y <yt:videoId>: el youtubeId sale de ahí."
     },
     {
       "id": "youtube-claude",
       "nombre": "YouTube · Claude",
-      "url": "https://www.youtube.com/@claude",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCV03SRZXJEz-hchIAogeJOg",
       "oficial": true,
       "audiencias": [
         "transversal",
         "finanzas",
         "woztell"
-      ]
+      ],
+      "notas": "Feed RSS del canal (más fiable que la página). Cada <entry> trae <published>, <link href=\"https://www.youtube.com/watch?v=…\"> y <yt:videoId>: el youtubeId sale de ahí."
     },
     {
       "id": "zoho-mcp",

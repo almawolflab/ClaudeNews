@@ -38,12 +38,17 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
 ## 3 · Búsqueda
 
 - Ventana: novedades publicadas en las **últimas `ventanaHoras` (72 h)**.
-- **Fuentes:** recorre **todas** las `fuentes` de `agents/fuentes.json`, no solo las primeras. Si una no carga (p. ej. dominio bloqueado en la red de la nube), anótala y sigue con las demás.
-- **Búsquedas (obligatorio, en paralelo):** lanza **4 subagentes a la vez**, uno por audiencia (`sagitaz`, `woztell`, `finanzas`, `transversal`). A cada uno le pasas la ventana de fechas, la fila de su audiencia de la tabla del paso 1 y **todas** sus `busquedas`. Cada subagente:
+- **Lanza 5 subagentes a la vez** (obligatorio, en paralelo): 4 de búsqueda (uno por audiencia) y 1 de **fuentes y catálogos**.
+- **Subagente de fuentes y catálogos:** le pasas la ventana de fechas, la tabla del paso 1 y la lista completa de `fuentes` y `catalogos` de `agents/fuentes.json`.
+  - Abre **cada una** de las `fuentes` (todas, no una muestra). Empieza por `claude-product-updates`.
+  - Ejecuta los dos comandos de `catalogos` (paso 3b).
+  - Las fuentes de YouTube son feeds RSS: lee cada `<entry>` (`<published>`, `<title>`, `<link>`, `<yt:videoId>`).
+  - Devuelve **una línea por fuente y por catálogo** con su resultado: "sin novedades en la ventana", "N candidatos" (con URL abierta, fecha y por qué encaja) o "no cargó (motivo)". Si un dominio no resuelve (bloqueado en la red de la nube), lo anota y sigue con las demás.
+- **Subagentes de búsqueda:** uno por audiencia (`sagitaz`, `woztell`, `finanzas`, `transversal`). A cada uno le pasas la ventana de fechas, la fila de su audiencia de la tabla del paso 1 y **todas** sus `busquedas`. Cada subagente:
   - ejecuta **cada una** de sus búsquedas, sin saltarse ninguna (puede añadir el mes y el año a la consulta);
   - abre los resultados que parezcan de la ventana y devuelve solo candidatos con **URL abierta, fecha de publicación y por qué encaja**, o "sin novedades";
   - devuelve también la lista de búsquedas ejecutadas.
-- Que una audiencia no tenga resultados es normal; saltarte sus búsquedas no. En el informe pon "búsquedas: N de N".
+- Que una audiencia o una fuente no tenga resultados es normal; saltarse búsquedas o fuentes no. En el informe pon **"fuentes: N de 17"** y **"búsquedas: N de 24"** (con los totales reales de `fuentes.json`).
 - **Fuente principal: `claude-product-updates`.** Es el feed oficial de novedades de producto de Claude; revísalo siempre primero. `claude-best-practices` y `claude-webinars` son guías y formación oficiales.
 
 ### 3b · Catálogos oficiales (`catalogos` en `fuentes.json`)
@@ -127,7 +132,7 @@ Descripción del PR (en Markdown):
 
 ## 9 · Informe final
 
-Termina con un resumen corto: fecha, **cobertura** (cada fuente y cada búsqueda por audiencia con su resultado: "sin novedades en la ventana", "N candidatos" o "no cargó"), candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
+Termina con un resumen corto: fecha, **cobertura** ("fuentes: N de 17", "búsquedas: N de 24", catálogos; y cada fuente y cada búsqueda por audiencia con su resultado: "sin novedades en la ventana", "N candidatos" o "no cargó"), candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
 
 ## Reglas que no se rompen
 
