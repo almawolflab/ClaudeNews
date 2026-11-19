@@ -20,7 +20,7 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
 | `empresas` | Qué hace | Interesa si la novedad trata de… |
 |------------|----------|-----------------------------------|
 | `sagitaz` | Implementa y consulta la Suite Zoho (CRM/ERP) | Claude + Zoho (CRM, Projects, WorkDrive, Catalyst, conectores/MCP); skills, plugins y repos útiles para consultores; proyectos compartidos; marketing digital |
-| `woztell` | Proveedor oficial de la API de WhatsApp Business; chatbots | Claude + Meta / WhatsApp, conectores de mensajería, HubSpot/Salesforce/Zapier; diseño y planificación de campañas de ADS |
+| `woztell` | Proveedor de servicios y proyectos sobre la **API oficial de WhatsApp Business de Meta** (su vertical principal) | Claude + **WhatsApp Business Platform / Cloud API de Meta**: conectores o MCP de WhatsApp, agentes y chatbots de Claude sobre WhatsApp, novedades de Meta para mensajería empresarial que afecten a Claude. **No** aplican CRMs (HubSpot, Salesforce), Zapier ni marketing genérico salvo que traten directamente de WhatsApp |
 | `finanzas` | Contabilidad del grupo (área interna) | Claude + Zoho Books / Billing; ofimática (Excel, Word, PDF); Cowork y agentes para tareas financieras |
 | `transversal` | Todo el grupo usa el plan Teams | Funciones del plan Teams: proyectos, memoria, administración, seguridad, app de escritorio |
 

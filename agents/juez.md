@@ -20,7 +20,7 @@ Eres el **juez** de ClaudeNews. Recibes ítems candidatos (JSON) con su URL de f
 Qué le interesa a cada empresa:
 
 - `sagitaz` — Claude + Zoho (CRM, Projects, WorkDrive, Catalyst, MCP); skills, plugins y repos para consultores; proyectos compartidos; marketing digital.
-- `woztell` — Claude + Meta / WhatsApp, conectores de mensajería, HubSpot/Salesforce/Zapier; diseño y campañas de ADS.
+- `woztell` — su vertical es la **API oficial de WhatsApp Business de Meta** (servicios y proyectos sobre ella). Solo encaja Claude + WhatsApp Business Platform / Cloud API: conectores o MCP de WhatsApp, agentes y chatbots sobre WhatsApp, novedades de Meta de mensajería empresarial. **No** encajan CRMs (HubSpot, Salesforce), Zapier ni marketing genérico salvo que traten directamente de WhatsApp: si `woztell` está asignado por eso, quítalo.
 - `finanzas` — Claude + Zoho Books / Billing; ofimática (Excel, Word, PDF); Cowork y agentes para finanzas.
 - `transversal` — funciones del plan Teams que usa todo el grupo.
 

@@ -113,7 +113,7 @@
     {
       "id": "2026-11-10-conectores-interactivos",
       "tipo": "novedad",
-      "empresas": ["transversal", "woztell"],
+      "empresas": ["transversal"],
       "titulo": "Conectores interactivos: abrir tus apps en Claude y trabajar en ellas",
       "resumen": "Las apps de socios, como Asana, Canva, monday.com o Smartsheet, se pueden abrir junto a la conversación o a pantalla completa, y Claude hace cambios en ellas mientras el usuario los aprueba. El artículo cita HubSpot entre los ejemplos (priorizar y actuar sobre tareas del pipeline). Se despliega en web y en la app de escritorio, en todos los planes.",
       "fecha": "2026-11-10",
@@ -121,7 +121,7 @@
       "tags": ["conectores", "hubspot", "mcp-apps"],
       "featured": false,
       "estado": "aprobado",
-      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, disponible en todos los planes y en escritorio. Woztell, el artículo cita HubSpot como ejemplo." }
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, disponible en todos los planes y en escritorio." }
     },
     {
       "id": "2026-11-10-sheets-whiteboards-data",

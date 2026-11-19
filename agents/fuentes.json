@@ -192,12 +192,11 @@
     ],
     "woztell": [
       "Claude WhatsApp",
-      "Claude Meta connector",
       "Claude WhatsApp Business API",
-      "Claude HubSpot connector",
-      "Claude Salesforce connector",
-      "Claude Zapier",
-      "Claude design ads campaign"
+      "Claude WhatsApp Cloud API MCP",
+      "Claude Meta WhatsApp connector",
+      "Claude WhatsApp chatbot agent",
+      "Anthropic Meta WhatsApp Business"
     ],
     "finanzas": [
       "Claude Zoho Books",
@@ -228,7 +227,7 @@
         "transversal"
       ],
       "comando": "node scripts/catalogos.js marketplace --desde <inicio de la ventana>",
-      "notas": "Tiene fecha de alta (addedAt). Solo interesan conectores/plugins de herramientas del grupo: Zoho (CRM, Books, Projects, Desk, Analytics, Bigin…), Meta/WhatsApp, HubSpot, Salesforce, Zapier, Canva, Figma, Microsoft 365/Excel, Xero/QuickBooks."
+      "notas": "Tiene fecha de alta (addedAt). Solo interesan conectores/plugins de herramientas del grupo: Zoho (CRM, Books, Projects, Desk, Analytics, Bigin…) para Sagitaz/Finanzas; WhatsApp Business / Meta (mensajería) para Woztell; Microsoft 365/Excel, Xero/QuickBooks para Finanzas. No interesan CRMs (HubSpot, Salesforce) ni Zapier."
     },
     {
       "id": "claude-academy",
