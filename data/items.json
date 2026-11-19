@@ -90,7 +90,7 @@
       "fecha": "2026-11-11",
       "fuente": { "url": "https://www.youtube.com/watch?v=nZaOSQffA8M", "nombre": "YouTube", "oficial": false },
       "tags": ["projects", "teams"],
-      "featured": true,
+      "featured": false,
       "estado": "aprobado",
       "youtubeId": "nZaOSQffA8M",
       "validacion": { "juez": "humano", "fecha": "2026-11-11", "notas": "Ítem semilla de la issue 001." }
@@ -132,7 +132,7 @@
       "fecha": "2026-11-10",
       "fuente": { "url": "https://claude.com/resources/articles/sheets-whiteboards-data", "nombre": "Claude · Product updates", "oficial": true },
       "tags": ["sheets", "whiteboards", "data", "ofimatica"],
-      "featured": false,
+      "featured": true,
       "estado": "aprobado",
       "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, activado por defecto en Team. Finanzas, hojas de cálculo y ofimática. Sagitaz, pizarras exportables a Vani by Zoho." }
     },
