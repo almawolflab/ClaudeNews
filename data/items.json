@@ -1,6 +1,33 @@
 {
-  "actualizado": "2026-11-19",
+  "actualizado": "2026-11-23",
   "items": [
+    {
+      "id": "2026-11-20-computer-use-team-enterprise",
+      "tipo": "novedad",
+      "empresas": [
+        "transversal"
+      ],
+      "titulo": "Computer use (beta) para los planes Team y Enterprise",
+      "resumen": "Claude puede ver la pantalla del usuario y trabajar en las aplicaciones de escritorio que este permita. Está en beta para los planes Team y Enterprise, con despliegue gradual. Funciona en la nueva experiencia de Claude Desktop y, al activar «Computer access», también en web y móvil.",
+      "fecha": "2026-11-20",
+      "fuente": {
+        "url": "https://support.claude.com/en/articles/12138966-release-notes",
+        "nombre": "Claude · Release notes (apps, Teams, Cowork)",
+        "oficial": true
+      },
+      "tags": [
+        "computer-use",
+        "teams",
+        "desktop"
+      ],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-23",
+        "notas": "Por qué encaja: transversal, función de los planes Team y Enterprise y de la app de escritorio."
+      }
+    },
     {
       "id": "2026-11-19-rearview-noviembre",
       "tipo": "docs",
@@ -135,6 +162,38 @@
       "featured": true,
       "estado": "aprobado",
       "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-18", "notas": "Por qué encaja: transversal, activado por defecto en Team. Finanzas, hojas de cálculo y ofimática. Sagitaz, pizarras exportables a Vani by Zoho." }
+    },
+    {
+      "id": "2026-11-23-caso-sheets-cierre-finanzas",
+      "tipo": "caso",
+      "empresas": [
+        "finanzas"
+      ],
+      "titulo": "Caso: borradores de hojas de cálculo con Claude Sheets en tareas de contabilidad",
+      "resumen": "Sugerencia: probar Claude Sheets, en beta y con funcionalidad básica, para preparar hojas sencillas de apoyo a la contabilidad y exportarlas a .xlsx o CSV cuando haga falta Excel completo.",
+      "fecha": "2026-11-10",
+      "fuente": {
+        "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+        "nombre": "Claude · Product updates",
+        "oficial": true
+      },
+      "tags": [
+        "sheets",
+        "ofimatica"
+      ],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-23",
+        "notas": "Por qué encaja: finanzas trabaja con hojas de cálculo y Sheets está activado por defecto en Team."
+      },
+      "empresa": "finanzas",
+      "novedadBase": "Claude Sheets, Whiteboards y Data: hojas de cálculo, pizarras y datos dentro de Claude",
+      "porQueEncaja": "Finanzas es el área de contabilidad del grupo y trabaja con hojas de cálculo; Sheets está activado por defecto en Team, el plan que usa el grupo.",
+      "primerPaso": "Pedir a Claude Sheets una hoja de apoyo sencilla con datos de ejemplo no confidenciales, exportarla a .xlsx y comprobar con una persona de Finanzas si ahorra tiempo.",
+      "esfuerzo": "bajo",
+      "impacto": "Posible ahorro de tiempo en hojas de apoyo; por validar con la prueba."
     },
     {
       "id": "2026-11-09-claude-fable-5-2",
