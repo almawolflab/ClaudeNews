@@ -48,7 +48,7 @@ Solo propones lo que cruza **Claude / ecosistema Anthropic** con estos usos:
   - ejecuta **cada una** de sus búsquedas, sin saltarse ninguna (puede añadir el mes y el año a la consulta);
   - abre los resultados que parezcan de la ventana y devuelve solo candidatos con **URL abierta, fecha de publicación y por qué encaja**, o "sin novedades";
   - devuelve también la lista de búsquedas ejecutadas.
-- Que una audiencia o una fuente no tenga resultados es normal; saltarse búsquedas o fuentes no. En el informe pon **"fuentes: N de 17"** y **"búsquedas: N de 24"** (con los totales reales de `fuentes.json`).
+- Que una audiencia o una fuente no tenga resultados es normal; saltarse búsquedas o fuentes no. En el informe pon **"fuentes: N de 17"** y **"búsquedas: N de 23"** (con los totales reales de `fuentes.json`).
 - **Fuente principal: `claude-product-updates`.** Es el feed oficial de novedades de producto de Claude; revísalo siempre primero. `claude-best-practices` y `claude-webinars` son guías y formación oficiales.
 
 ### 3b · Catálogos oficiales (`catalogos` en `fuentes.json`)
@@ -108,7 +108,7 @@ Para cada ítem aprobado, comprueba que su `fecha` cae en alguna edición de `da
 1. Si no queda **ningún** ítem aprobado: no crees rama ni PR. Termina con el informe (paso 9).
 2. Crea la rama `explorador/<hoy>` (si existe, `explorador/<hoy>-2`).
 3. Añade los ítems a `data/items.json` → `items` (orden por `fecha` descendente) y pon `actualizado` = hoy. **No toques** HTML, CSS, JS, schemas ni otros archivos (salvo `data/editions.json` si el paso 7 lo pide y `agents/estado/catalogo.json` según el paso 3b).
-4. Ejecuta `node scripts/validate.js --offline` (schema, duplicados, destacada, `youtubeId`). Si da errores, corrige o **quita** el ítem que los cause y repite hasta **0 errores**; no abras el PR con errores. Las URLs no se comprueban aquí porque el entorno de la nube bloquea algunos dominios (p. ej. YouTube): ya las abriste tú en el paso 3 y la Action del PR las vuelve a comprobar desde GitHub.
+4. Ejecuta `node scripts/validate.js --offline` (schema, duplicados, destacada, `youtubeId`). Si da errores, corrige o **quita** el ítem que los cause y repite hasta **0 errores**; no abras el PR con errores. Las URLs no se comprueban aquí porque la validación `--offline` no hace red: ya las abriste tú en el paso 3 y la Action del PR las vuelve a comprobar desde GitHub.
 5. Commit: `contenido: N novedades (<hoy>)` con un cuerpo que liste los ids.
 6. Push y PR con `gh pr create --label explorador --title "ClaudeNews: N novedades (<hoy>)" --body-file <archivo>`. Si la etiqueta no existe, créala: `gh label create explorador --color C13B2F --description "PR del agente explorador"`.
 
@@ -132,7 +132,7 @@ Descripción del PR (en Markdown):
 
 ## 9 · Informe final
 
-Termina con un resumen corto: fecha, **cobertura** ("fuentes: N de 17", "búsquedas: N de 24", catálogos; y cada fuente y cada búsqueda por audiencia con su resultado: "sin novedades en la ventana", "N candidatos" o "no cargó"), candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
+Termina con un resumen corto: fecha, **cobertura** ("fuentes: N de 17", "búsquedas: N de 23", catálogos; y cada fuente y cada búsqueda por audiencia con su resultado: "sin novedades en la ventana", "N candidatos" o "no cargó"), candidatos, aprobados, descartados (con motivo), enlace al PR o "sin PR: no hubo novedades relevantes", y cualquier problema (fuente caída, `gh` no disponible…).
 
 ## Reglas que no se rompen
 
