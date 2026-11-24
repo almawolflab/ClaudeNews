@@ -1,6 +1,20 @@
 {
-  "actualizado": "2026-11-23",
+  "actualizado": "2026-11-24",
   "items": [
+    {
+      "id": "2026-11-23-guia-seguridad-agentes-codigo",
+      "tipo": "docs",
+      "empresas": ["transversal"],
+      "titulo": "Guía para proteger agentes de programación como Claude Code en organizaciones",
+      "resumen": "Guía oficial para líderes de seguridad y tecnología sobre cómo acotar riesgos de Claude Code a escala: defensa en capas (nivel de juicio y límites fijos), permisos, hooks, sandboxing, listas de salida de red, políticas centralizadas y lista de verificación para un piloto. Escrita para planes Team y Enterprise; SSO, RBAC y API de auditoría son solo Enterprise.",
+      "fecha": "2026-11-23",
+      "fuente": { "url": "https://claude.com/resources/articles/enterprise-guide-to-securing-coding-agents", "nombre": "Claude · Best practices", "oficial": true },
+      "formato": "guia",
+      "tags": ["seguridad", "claude-code", "administracion"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": { "juez": "juez-llm-v1", "fecha": "2026-11-24", "notas": "Por qué encaja: transversal, guía de administración y seguridad escrita para los planes Team y Enterprise." }
+    },
     {
       "id": "2026-11-20-computer-use-team-enterprise",
       "tipo": "novedad",
