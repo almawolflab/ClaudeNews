@@ -1,6 +1,69 @@
 {
-  "actualizado": "2026-11-24",
+  "actualizado": "2026-11-25",
   "items": [
+    {
+      "id": "2026-11-24-skills-sobre-mcp",
+      "tipo": "novedad",
+      "empresas": ["sagitaz", "transversal"],
+      "titulo": "Los servidores MCP ya pueden publicar skills, ejecutar tareas y más con Claude",
+      "resumen": "Los servidores MCP pueden publicar skills junto a sus herramientas (beta pública, en Claude y Claude Code). En Team solo si un administrador lo habilita. Tareas y elicitation (el servidor pide confirmación al usuario) son generales en Pro, Max y Ultra y se despliegan en Team y Enterprise; la subida de archivos llegará pronto.",
+      "fecha": "2026-11-24",
+      "fuente": {
+        "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+        "nombre": "Claude · Product updates",
+        "oficial": true
+      },
+      "tags": ["mcp", "skills", "conectores"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-25",
+        "notas": "Por qué encaja: sagitaz, afecta a los conectores MCP y a las skills para consultores. Transversal, en Team la habilita un administrador."
+      }
+    },
+    {
+      "id": "2026-11-24-artifacts-como-apps",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Instalar artifacts como apps en Mac y Windows (beta)",
+      "resumen": "Un artifact creado con Claude puede instalarse como app en Claude para Mac y Windows, con su propia ventana e icono. Está en beta en todos los planes. En Team viene activada por defecto, con el acceso total desactivado. Algunos artifacts, como Docs, Slides y Sheets, no se pueden instalar.",
+      "fecha": "2026-11-24",
+      "fuente": {
+        "url": "https://claude.com/resources/articles/install-as-app",
+        "nombre": "Claude · Product updates",
+        "oficial": true
+      },
+      "tags": ["artifacts", "desktop", "beta"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-25",
+        "notas": "Por qué encaja: transversal, función de la app de escritorio con ajustes propios del plan Team."
+      }
+    },
+    {
+      "id": "2026-11-24-archivos-apps-conectadas",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Enviar archivos a apps conectadas y guardar archivos desde ellas (beta)",
+      "resumen": "Claude puede enviar un archivo a una app conectada y guardar un archivo que la app ofrece. El despliegue es gradual. En Team y Enterprise se activa cuando un owner lo habilita.",
+      "fecha": "2026-11-24",
+      "fuente": {
+        "url": "https://support.claude.com/en/articles/12138966-release-notes",
+        "nombre": "Claude · Release notes (apps, Teams, Cowork)",
+        "oficial": true
+      },
+      "tags": ["conectores", "archivos", "teams"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-25",
+        "notas": "Por qué encaja: transversal, función de conectores que en Team activa un owner."
+      }
+    },
     {
       "id": "2026-11-23-guia-seguridad-agentes-codigo",
       "tipo": "docs",
