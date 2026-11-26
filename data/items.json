@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25",
+  "actualizado": "2026-11-26",
   "items": [
     {
       "id": "2026-11-24-skills-sobre-mcp",
@@ -62,6 +62,27 @@
         "juez": "juez-llm-v1",
         "fecha": "2026-11-25",
         "notas": "Por qué encaja: transversal, función de conectores que en Team activa un owner."
+      }
+    },
+    {
+      "id": "2026-11-23-claude-ship",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Claude Ship: revisión, corrección y aprobación de pull requests en GitHub (beta)",
+      "resumen": "Claude Ship combina Code Review (disponible de forma general) con PR Steward (beta), que trabaja sobre fallos de CI, conflictos y comentarios de revisión, y Claude Approvals (beta), que aplica una política de aprobación escrita en el repositorio. Planes Team y Enterprise, repositorios de GitHub; se factura por tokens y los administradores pueden fijar límites de gasto.",
+      "fecha": "2026-11-23",
+      "fuente": {
+        "url": "https://claude.com/resources/articles/introducing-claude-ship",
+        "nombre": "Claude",
+        "oficial": true
+      },
+      "tags": ["claude-ship", "code-review", "teams"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-26",
+        "notas": "Por qué encaja: transversal, función de los planes Team (administración y gasto por token) que usa todo el grupo."
       }
     },
     {
