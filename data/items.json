@@ -1,6 +1,27 @@
 {
-  "actualizado": "2026-11-25",
+  "actualizado": "2026-11-27",
   "items": [
+    {
+      "id": "2026-11-24-desktop-v7-37095-0",
+      "tipo": "novedad",
+      "empresas": ["transversal"],
+      "titulo": "Claude Desktop v7.37095.0: cambios en hooks de plugins en macOS, extensiones Python y timeouts MCP",
+      "resumen": "La versión 7.37095.0 de Claude Desktop (24 de noviembre de 2026) cambia cómo se ejecutan los hooks de plugins en macOS, y algunos pueden bloquear acciones que antes no bloqueaban: conviene probar primero en un solo Mac. Las extensiones Python se vuelven a descargar tras actualizar. En Cowork y Chat, una llamada MCP local puede durar hasta 3 minutos por defecto.",
+      "fecha": "2026-11-24",
+      "fuente": {
+        "url": "https://claude.com/docs/cowork/claude-desktop-changelog",
+        "nombre": "Claude · Changelog de Claude Desktop",
+        "oficial": true
+      },
+      "tags": ["desktop", "administracion", "plugins"],
+      "featured": false,
+      "estado": "aprobado",
+      "validacion": {
+        "juez": "juez-llm-v1",
+        "fecha": "2026-11-27",
+        "notas": "Por qué encaja: transversal, afecta a la app de escritorio, plugins y MCP que usa todo el grupo con el plan Teams."
+      }
+    },
     {
       "id": "2026-11-24-skills-sobre-mcp",
       "tipo": "novedad",
